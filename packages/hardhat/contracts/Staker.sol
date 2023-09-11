@@ -11,12 +11,13 @@ contract Staker {
 		exampleExternalContract = ExampleExternalContract(
 			exampleExternalContractAddress
 		);
-		deadline = block.timestamp + 30 seconds; // 30 seconds
+		// deadline = block.timestamp + 30 seconds; // 30 seconds
+		deadline = block.timestamp + 365 days; // 30 seconds
 	}
 
 	mapping(address => uint256) public balances;
 	uint256 immutable deadline;
-	uint256 public threshold = 1 ether;
+	uint256 public threshold = 10 ether;
 	bool public withdrawAllowed = false;
 
 	modifier notCompleted() {
